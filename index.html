@@ -39,6 +39,7 @@
   a { color: inherit; }
   img { display: block; max-width: 100%; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  @media (max-width: 640px) { .wrap { padding: 0 20px; } }
 
   /* NAV */
   header {
@@ -80,8 +81,11 @@
     background:
       linear-gradient(180deg, rgba(30,42,29,0.35) 0%, rgba(30,42,29,0.55) 55%, var(--forest-deep) 100%),
       url('hovedhus.jpg');
-    background-size: cover; background-position: center;
+    background-size: cover; background-position: center 35%;
     color: var(--oat); overflow: hidden;
+  }
+  @media (max-width: 640px) {
+    .hero { min-height: 78vh; background-position: center 30%; }
   }
   .hero::before {
     content: ""; position: absolute; inset: 0; opacity: 0.35;
@@ -90,6 +94,9 @@
   .hero-inner {
     position: relative; width: 100%; max-width: 1080px; margin: 0 auto;
     padding: 140px 32px 64px;
+  }
+  @media (max-width: 640px) {
+    .hero-inner { padding: 100px 20px 48px; }
   }
   .eyebrow {
     font-family: 'IBM Plex Mono', monospace; font-size: 12px;
@@ -147,6 +154,12 @@
     padding: 6px 10px; border-radius: 2px; font-family: 'IBM Plex Mono', monospace;
   }
   .om-text p { color: rgba(30,42,29,0.78); margin-bottom: 16px; }
+  .gallery-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 64px;
+  }
+  @media (max-width: 640px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 40px; }
+  }
   .facts { margin-top: 28px; border-top: 1px solid var(--line); }
   .fact-row {
     display: flex; justify-content: space-between; padding: 14px 0;
@@ -267,7 +280,7 @@
       </div>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 64px;">
+    <div class="gallery-grid">
       <img src="soverom.jpg" alt="Soverom" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 4px;">
       <img src="kjokken.jpg" alt="Felleskjøkken" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 4px;">
       <img src="utsikt.jpg" alt="Utsikt ved vannet" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 4px;">
@@ -286,7 +299,7 @@
       <p>Rommene er ryddige og godt vedlikeholdte. Fellesarealene er der du faktisk kommer til å tilbringe tiden.</p>
     </div>
   </div>
-  <div class="wrap" style="padding: 0 32px;">
+  <div class="wrap">
     <div class="fac-grid">
       <div class="fac-item">
         <span class="num mono">01</span>
