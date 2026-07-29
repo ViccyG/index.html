@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lovisenlund Overnatting – Rolig vandrerhjem i Øvrebø</title>
+<title>Lie 30 – Praktisk overnatting for prosjektansatte</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -170,16 +170,26 @@
 
   /* FASILITETER */
   .fasiliteter { background: var(--oat-warm); }
-  .fac-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-  @media (max-width: 720px) { .fac-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 480px) { .fac-grid { grid-template-columns: 1fr; } }
-  .fac-item {
-    background: var(--oat-warm); padding: 30px 26px; min-height: 150px;
-    display: flex; flex-direction: column; justify-content: space-between;
+  .feature-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 28px;
   }
-  .fac-item .num { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--timber); }
-  .fac-item h3 { font-size: 17px; margin-top: 30px; }
-  .fac-item p { font-size: 13.5px; color: rgba(30,42,29,0.65); margin-top: 6px; }
+  @media (max-width: 860px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .feature-grid { grid-template-columns: 1fr; } }
+  .feature-card img {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px;
+  }
+  .feature-card h3 { font-size: 18px; margin-top: 16px; }
+  .feature-card p { font-size: 14px; color: rgba(30,42,29,0.68); margin-top: 6px; }
+  .amenity-strip {
+    display: flex; flex-wrap: wrap; gap: 16px 32px;
+    margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--line);
+  }
+  .amenity-item { display: flex; align-items: center; gap: 12px; font-size: 14.5px; }
+  .icon-circle {
+    width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%;
+    background: var(--forest); color: var(--oat);
+    display: flex; align-items: center; justify-content: center; font-size: 15px;
+  }
 
   /* PRAKTISK */
   .praktisk-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
@@ -235,11 +245,12 @@
 
 <header>
   <div class="navbar">
-    <div class="brand">Lovisenlund</div>
+    <div class="brand">Lie 30</div>
     <nav>
       <ul>
         <li><a href="#om">Om stedet</a></li>
         <li><a href="#fasiliteter">Fasiliteter</a></li>
+        <li><a href="#losninger">Løsninger</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
@@ -249,9 +260,9 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">Øvrebø · Like utenfor Vennesla</div>
-    <h1 class="display">Kom hjem til<br>ro og god plass.</h1>
-    <p class="hero-sub">Lovisenlund Overnatting ligger rett utenfor Vennesla — nært nok til byen, men med den roen du bare finner litt utenfor. Eget rom og større fellesarealer å slappe av i.</p>
+    <div class="eyebrow">Nær jobben – enklere hverdag</div>
+    <h1 class="display">Kun 13 km til<br>Bulk Støleheia.</h1>
+    <p class="hero-sub">Lie 30 tilbyr praktisk overnatting for prosjektansatte — komfortable rom, fullt utstyrt kjøkken, eget vaskerom og treningsrom, kort vei til jobben.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#kontakt">Ta kontakt</a>
       <a class="btn btn-ghost" href="#om">Se stedet</a>
@@ -265,17 +276,32 @@
   <div class="wrap">
     <div class="om-grid">
       <div>
-        <img src="hovedhus.jpg" alt="Lovisenlund Overnatting - hovedhuset" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px;">
+        <img src="hovedhus.jpg" alt="Lie 30 - hovedhuset" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px;">
       </div>
       <div class="om-text">
-        <div class="section-eyebrow mono">Om stedet</div>
-        <h2 style="font-size: 30px; margin-bottom: 18px;">Romslig og i god ro</h2>
-        <p>Lovisenlund ligger på Lie i Øvrebø, rett utenfor Vennesla. Her slipper du gjennomfartstrafikk og bystøy, men er likevel nær nok til at alt du trenger er innen rekkevidde.</p>
-        <p>Rommene er ryddige og innbydende, med det du faktisk trenger. Felleskjøkkenet er fullt utstyrt og har egen spiseplass, så det er like greit å lage en ordentlig middag som en rask kaffe.</p>
+        <div class="section-eyebrow mono">Om Lie 30</div>
+        <h2 style="font-size: 30px; margin-bottom: 18px;">Et godt sted å bo når jobben er i fokus</h2>
+        <p>Lie 30 ligger kun 13 km fra Bulk Støleheia. Hos oss får prosjektansatte et komfortabelt og praktisk opphold med alt som trengs i hverdagen.</p>
+        <ul style="list-style: none; margin-top: 22px; display: flex; flex-direction: column; gap: 10px;">
+          <li style="display: flex; gap: 10px; align-items: baseline; font-size: 15px;"><span style="color: var(--ochre);">✔</span> Rolige omgivelser</li>
+          <li style="display: flex; gap: 10px; align-items: baseline; font-size: 15px;"><span style="color: var(--ochre);">✔</span> Gode senger</li>
+          <li style="display: flex; gap: 10px; align-items: baseline; font-size: 15px;"><span style="color: var(--ochre);">✔</span> Fleksible opphold</li>
+          <li style="display: flex; gap: 10px; align-items: baseline; font-size: 15px;"><span style="color: var(--ochre);">✔</span> Enkel kommunikasjon</li>
+        </ul>
+        <div class="section-eyebrow mono">Lie 30 tilbyr</div>
+        <ul style="list-style: none; margin-top: 4px; display: flex; flex-direction: column; gap: 10px;">
+          <li style="display: flex; gap: 10px; align-items: baseline; font-size: 15px;"><span>🏠</span> 30 rom (kan utvides til ca. 40 rom)</li>
+          <li style="display: flex; gap: 10px; align-items: baseline; font-size: 15px;"><span>🛏️</span> Enkelt- og dobbeltrom</li>
+          <li style="display: flex; gap: 10px; align-items: baseline; font-size: 15px;"><span>🍳</span> Fullt utstyrte kjøkken</li>
+          <li style="display: flex; gap: 10px; align-items: baseline; font-size: 15px;"><span>🛋️</span> Store oppholdsrom</li>
+          <li style="display: flex; gap: 10px; align-items: baseline; font-size: 15px;"><span>🏋️</span> Treningsrom</li>
+          <li style="display: flex; gap: 10px; align-items: baseline; font-size: 15px;"><span>🚗</span> Gratis parkering</li>
+          <li style="display: flex; gap: 10px; align-items: baseline; font-size: 15px;"><span>📶</span> Gratis Wi-Fi</li>
+          <li style="display: flex; gap: 10px; align-items: baseline; font-size: 15px;"><span>📍</span> Lie 30, 4715 Øvrebø</li>
+        </ul>
         <div class="facts">
-          <div class="fact-row"><span>Adresse</span><span>Lie 30, 4715 Øvrebø</span></div>
-          <div class="fact-row"><span>Beliggenhet</span><span>Like utenfor Vennesla</span></div>
-          <div class="fact-row"><span>Avstand til Kristiansand</span><span>26 km</span></div>
+          <div class="fact-row"><span>Avstand til Bulk – Støleheia</span><span>13 km · ca. 17 min</span></div>
+          <div class="fact-row"><span>Avstand til Kristiansand</span><span>25 km · ca. 25 min</span></div>
         </div>
       </div>
     </div>
@@ -291,6 +317,26 @@
   </div>
 </section>
 
+<div class="quiet-strip">
+  <div class="wrap">
+    <p class="quiet-label mono">Enkel tilkomst, uansett hvor dere kommer fra.</p>
+    <div class="quiet-row">
+      <div class="quiet-item">
+        <p style="font-size: 22px; color: var(--oat); font-family: 'Fraunces', serif;">13 km</p>
+        <p><strong>Til Bulk</strong> — ca. 17 minutter med bil.</p>
+      </div>
+      <div class="quiet-item">
+        <p style="font-size: 22px; color: var(--oat); font-family: 'Fraunces', serif;">25 km</p>
+        <p><strong>Til Kristiansand</strong> — ca. 25 minutter med bil.</p>
+      </div>
+      <div class="quiet-item">
+        <p style="font-size: 22px; color: var(--oat); font-family: 'Fraunces', serif;">E39</p>
+        <p><strong>Nær hovedveien</strong> — enkel adkomst med bil.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section id="fasiliteter" class="fasiliteter">
   <div class="wrap">
     <div class="section-head">
@@ -300,44 +346,61 @@
     </div>
   </div>
   <div class="wrap">
-    <div class="fac-grid">
-      <div class="fac-item">
-        <span class="num mono">01</span>
-        <div><h3>Felleskjøkken</h3><p>Fullt utstyrt kjøkken med egen spiseplass rett ved siden av.</p></div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <img src="soverom.jpg" alt="Gode rom">
+        <h3>Gode rom</h3>
+        <p>Lyse og trivelige enerom med gode senger, skrivebord og lagringsplass.</p>
       </div>
-      <div class="fac-item">
-        <span class="num mono">02</span>
-        <div><h3>Takterrasse</h3><p>Et rolig sted å starte eller avslutte dagen.</p></div>
+      <div class="feature-card">
+        <img src="kjokken.jpg" alt="Fullt utstyrt kjøkken">
+        <h3>Fullt utstyrt kjøkken</h3>
+        <p>Flere kjøkken med alt av utstyr — god plass til å lage mat og spise sammen.</p>
       </div>
-      <div class="fac-item">
-        <span class="num mono">03</span>
-        <div><h3>Gratis parkering</h3><p>Egen, privat parkeringsplass rett utenfor døren.</p></div>
+      <div class="feature-card">
+        <img src="bad.jpg" alt="Felles bad">
+        <h3>Felles bad</h3>
+        <p>Flere felles bad med separate, private dusjer.</p>
       </div>
-      <div class="fac-item">
-        <span class="num mono">04</span>
-        <div><h3>Trådløst internett</h3><p>Gratis Wi-Fi i hele bygget, hele oppholdet.</p></div>
+      <div class="feature-card">
+        <img src="takterrasse.jpg" alt="Takterrasse">
+        <h3>Takterrasse</h3>
+        <p>Et rolig sted å starte eller avslutte dagen.</p>
       </div>
-      <div class="fac-item">
-        <span class="num mono">05</span>
-        <div><h3>Rom med det viktigste</h3><p>Klesskap, liten servant og eget kjøleskap på rommet.</p></div>
-      </div>
-      <div class="fac-item">
-        <span class="num mono">06</span>
-        <div><h3>Felles bad</h3><p>Flere felles bad med separate, private dusjer.</p></div>
-      </div>
-      <div class="fac-item">
-        <span class="num mono">07</span>
-        <div><h3>Treningsrom</h3><p>Eget rom for trening, tilgjengelig for alle gjester.</p></div>
-      </div>
-      <div class="fac-item">
-        <span class="num mono">08</span>
-        <div><h3>Vaskerom</h3><p>Vaskemaskin til bruk under oppholdet.</p></div>
-      </div>
-      <div class="fac-item">
-        <span class="num mono">09</span>
-        <div><h3>Fellesstue</h3><p>Hyggelig sted å slappe av med de andre gjestene.</p></div>
+      <div class="feature-card">
+        <img src="parkering.jpg" alt="God parkering">
+        <h3>God parkering</h3>
+        <p>Gratis parkering rett ved bygget — enkelt for både bil og varebil.</p>
       </div>
     </div>
+
+    <div class="amenity-strip">
+      <div class="amenity-item"><span class="icon-circle">📶</span> Gratis Wi-Fi</div>
+      <div class="amenity-item"><span class="icon-circle">🧺</span> Vaskerom med tørketromler</div>
+      <div class="amenity-item"><span class="icon-circle">🏋️</span> Treningsrom</div>
+      <div class="amenity-item"><span class="icon-circle">🛋️</span> Fellesstue</div>
+      <div class="amenity-item"><span class="icon-circle">🏢</span> Tilpasset Bulk og andre bedrifter</div>
+      <div class="amenity-item"><span class="icon-circle">🔥</span> God oppvarming</div>
+      <div class="amenity-item"><span class="icon-circle">🧳</span> Oppbevaringsplass</div>
+    </div>
+  </div>
+</section>
+
+<section id="losninger" style="background: var(--oat-warm);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow mono">Fleksible løsninger</div>
+      <h2>Vi tilbyr overnatting for</h2>
+      <p>Vi tilbyr både korttids- og langtidsopphold tilpasset ditt prosjekt og dine ansatte.</p>
+    </div>
+    <ul style="list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 40px; max-width: 640px;">
+      <li style="display: flex; gap: 10px; align-items: baseline; font-size: 16px;"><span style="color: var(--ochre);">✔</span> Entreprenører</li>
+      <li style="display: flex; gap: 10px; align-items: baseline; font-size: 16px;"><span style="color: var(--ochre);">✔</span> Prosjektansatte</li>
+      <li style="display: flex; gap: 10px; align-items: baseline; font-size: 16px;"><span style="color: var(--ochre);">✔</span> Montører</li>
+      <li style="display: flex; gap: 10px; align-items: baseline; font-size: 16px;"><span style="color: var(--ochre);">✔</span> Korttidsopphold</li>
+      <li style="display: flex; gap: 10px; align-items: baseline; font-size: 16px;"><span style="color: var(--ochre);">✔</span> Langtidsopphold</li>
+      <li style="display: flex; gap: 10px; align-items: baseline; font-size: 16px;"><span style="color: var(--ochre);">✔</span> Mindre og større arbeidslag</li>
+    </ul>
   </div>
 </section>
 
@@ -345,21 +408,28 @@
   <div class="wrap">
     <div class="kk-grid">
       <div>
-        <div class="section-eyebrow mono">Kontakt</div>
+        <div class="section-eyebrow mono">Ønsker dere en befaring?</div>
         <h2 class="section-head" style="margin-bottom: 0;">Ta kontakt</h2>
         <div class="kontakt-list">
           <div class="kontakt-row">
-            <div class="kontakt-icon">@</div>
+            <div class="kontakt-icon">👤</div>
             <div>
-              <p>E-post</p>
-              <a href="mailto:lovisenlundovernatting@gmail.com"><p>lovisenlundovernatting@gmail.com</p></a>
+              <p>Kontaktperson</p>
+              <p>Erling Nilsen</p>
             </div>
           </div>
           <div class="kontakt-row">
             <div class="kontakt-icon">tlf</div>
             <div>
               <p>Telefon</p>
-              <a href="tel:+4790622782"><p>906 22 782</p></a>
+              <a href="tel:+4790622782"><p>+47 90 62 27 82</p></a>
+            </div>
+          </div>
+          <div class="kontakt-row">
+            <div class="kontakt-icon">@</div>
+            <div>
+              <p>E-post</p>
+              <a href="mailto:lovisenlundovernatting@gmail.com"><p>lovisenlundovernatting@gmail.com</p></a>
             </div>
           </div>
           <div class="kontakt-row">
@@ -381,7 +451,7 @@
 
 <footer>
   <div class="wrap">
-    <div class="brand display">Lovisenlund Overnatting</div>
+    <div class="brand display">Lie 30</div>
     <div>Øvrebø, Agder — Sørlandet, Norge</div>
   </div>
 </footer>
