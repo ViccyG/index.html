@@ -178,6 +178,15 @@
   .feature-card img {
     width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px;
   }
+  .feature-card--icon {
+    aspect-ratio: 4/3; border-radius: 4px; background: var(--forest);
+    color: var(--oat); display: flex; flex-direction: column; align-items: flex-start;
+    justify-content: center; padding: 28px;
+  }
+  .feature-card--icon h3, .feature-card--icon p { margin-top: 0; }
+  .feature-card--icon h3 { color: var(--oat); }
+  .feature-card--icon p { color: rgba(241,235,218,0.75) !important; }
+  .feature-icon { font-size: 34px; margin-bottom: 14px; }
   .feature-card h3 { font-size: 18px; margin-top: 16px; }
   .feature-card p { font-size: 14px; color: rgba(30,42,29,0.68); margin-top: 6px; }
   .amenity-strip {
@@ -363,6 +372,11 @@
         <h3>God parkering</h3>
         <p>Gratis parkering rett ved bygget — enkelt for både bil og varebil.</p>
       </div>
+      <div class="feature-card feature-card--icon">
+        <div class="feature-icon">🧺</div>
+        <h3>Stort vaskerom</h3>
+        <p>Fullt utstyrt vaskerom med vask og tørk.</p>
+      </div>
       <div class="feature-card">
         <img src="utsikt.jpg" alt="Uteområde">
         <h3>Flotte uteområder</h3>
@@ -372,7 +386,6 @@
 
     <div class="amenity-strip">
       <div class="amenity-item"><span class="icon-circle">📶</span> Gratis Wi-Fi</div>
-      <div class="amenity-item"><span class="icon-circle">🧺</span> Stort, fullt utstyrt vaskerom med vask og tørk</div>
       <div class="amenity-item"><span class="icon-circle">🏋️</span> Treningsrom</div>
       <div class="amenity-item"><span class="icon-circle">🛋️</span> Fellesstue</div>
       <div class="amenity-item"><span class="icon-circle">🏢</span> Tilpasset Bulk og andre bedrifter</div>
